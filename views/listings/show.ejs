@@ -1,0 +1,131 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        color: #343a40;
+    }
+
+    .container {
+        max-width: 960px;
+        margin: auto;
+    }
+
+    .card {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .card-img-top {
+        height: 300px;
+        object-fit: cover;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    .card-body {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #6c757d;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul li {
+        padding: 5px 0;
+        font-size: 1.1rem;
+    }
+
+    ul li strong {
+        color: #343a40;
+    }
+
+    section {
+        background-color: #ffffff;
+        padding: 20px;
+        margin-top: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #listing-details-heading {
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    .btn-primary,
+    .btn-danger {
+        width: 100%;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .btn-danger {
+        margin-top: 10px;
+    }
+
+    form {
+        margin: 0;
+    }
+</style>
+
+<body>
+    <main>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3 class="mb-4">Listing Details</h3>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-8 offset-md-2">
+                    <div class="card">
+                        <img src="<%= listing.image %>" 
+                             alt="<%= listing.title || 'Listing Image' %>" 
+                             class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= listing.title || 'Not Available' %></h5>
+                            <p class="card-text"><%= listing.description || 'No description available.' %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section aria-labelledby="listing-details-heading">
+                <h4 id="listing-details-heading">Details</h4>
+                <ul>
+                    <li><strong>Title:</strong> <%= listing.title || 'Not Available' %></li>
+                    <li><strong>Description:</strong> <%= listing.description || 'Not Available' %></li>
+                    <li><strong>Price:</strong> &#8377; <%= listing.price?.toLocaleString("en-IN") || 'Not Available' %></li>
+                    <li><strong>Location:</strong> <%= listing.location || 'Not Available' %></li>
+                    <li><strong>Country:</strong> <%= listing.country || 'Not Available' %></li>
+                </ul>
+            </section>
+
+            <div class="row mt-4">
+                <div class="col-md-8 offset-md-2">
+                    <a href="/listings/<%= listing._id %>/edit" class="btn btn-primary">Edit Listing</a>
+                    <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-danger">Delete Listing</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>

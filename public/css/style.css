@@ -1,0 +1,144 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body > main.container,
+body > main.container-fluid {
+    flex: 1;
+}
+
+/* NAVBAR */
+.navbar {
+    min-height: 5rem;
+    background-color: #fff;
+}
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+.brand-wordmark {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #222;
+}
+.nav-link {
+    color: #222222 !important;
+    font-weight: 500;
+}
+.nav-link.active {
+    color: #fe424d !important;
+}
+
+.btn-brand {
+    background-color: #fe424d !important;
+    border: none !important;
+    color: #fff !important;
+}
+.btn-brand:hover {
+    filter: brightness(0.95);
+    color: #fff !important;
+}
+
+/*FOOTER*/
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-socials i{
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.f-info{
+    text-align: center;
+    display: flex;
+    height: 8rem;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/*Cards — default card chrome (listing grid uses .listing-card overrides below) */
+.card:not(.listing-card) {
+    margin-bottom: 2rem;
+}
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body {
+    padding: 0 !important;
+}
+.listing-card .card-body {
+    padding: 0.75rem 0 0 !important;
+}
+.card-text p {
+    font-weight: 400 !important;
+}
+.listing-link {
+    text-decoration: none !important;
+    color: inherit;
+}
+/* LISTINGS INDEX (reference-style grid) */
+.listings-all-title {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #222;
+}
+.listing-card {
+    border: none !important;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 0;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.listing-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.08);
+}
+.listing-card .card-img-top {
+    height: 16rem;
+}
+.listing-card-overlay {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    border-radius: 1rem 1rem 0 0;
+}
+.listing-card:hover .listing-card-overlay {
+    opacity: 0.15;
+    background-color: #fff !important;
+}
+.listing-card-title {
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 0.25rem;
+}
+.listing-card-price {
+    font-weight: 500;
+    color: #444;
+}
+
+/*Show image*/
+.show-img{
+    height: 30vh;
+}

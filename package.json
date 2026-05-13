@@ -1,0 +1,26 @@
+{
+  "name": "wanderlust",
+  "version": "1.0.0",
+  "main": "App.js",
+  "scripts": {
+    "start": "node App.js",
+    "initdb": "node init/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["wanderlust", "express", "mongodb", "listings"],
+  "author": "vaishnavi217 <chvaishnavi425@gmail.com>",
+  "contributors": [
+    "vaishnavi217 <chvaishnavi425@gmail.com>"
+  ],
+  "license": "ISC",
+  "description": "WanderLust-style vacation rental listings app (Express, MongoDB, EJS).",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "ejs": "^3.1.10",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.21.1",
+    "joi": "^17.13.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.8.2"
+  }
+}
